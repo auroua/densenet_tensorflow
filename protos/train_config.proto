@@ -1,0 +1,25 @@
+syntax = "proto2";
+
+package object_detection.protos;
+
+message train_parameters{
+    // training epoch size
+    optional int32 epoch = 1;
+    // input config file path
+    optional string input_config_path = 2;
+    // densenet config path
+    optional string densenet_config_path = 3;
+    // learning rate
+    optional float learning_rate = 4;
+    // weight deacy rate
+    optional float weight_deacy_rate = 5;
+    // summary steps
+    optional int32 summary_step = 6;
+    // model save steps
+    optional int32 test_save_step = 7;
+    // summary save path
+    optional string summary_save_path = 8;
+    // model save path
+    optional string model_save_path = 9;
+}
+

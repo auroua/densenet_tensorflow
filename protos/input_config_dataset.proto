@@ -1,0 +1,40 @@
+syntax = "proto2";
+
+package object_detection.protos;
+
+message InputDatasetPipline{
+    // input batch size
+    optional int32 batch_size = 1;
+    // test dataset batch size
+    optional int32 test_batch_size = 2;
+    // input image height
+    optional int32 image_height = 3;
+    // input image width
+    optional int32 image_width = 4;
+    // input image channel
+    optional int32 image_channel = 5;
+    // input tfrecords file path, not containing file names
+    optional string file_location = 6;
+    // quene capacity
+    optional int32 capacity = 7;
+    // the tfrecords name
+    repeated string tfrecords = 8;
+    // randomly crop
+    optional bool random_crop = 9;
+    // random crop image size
+    optional int32 crop_size = 10;
+    // random flip
+    optional bool random_flip = 11;
+    // random change brightness
+    optional bool random_change_brightness = 12;
+    // max brightness
+    optional int32 brightness = 13;
+    // random change contrast
+    optional bool random_change_contrast = 14;
+    // contrast lower
+    optional float contrast_lower = 15;
+    // contrast upper
+    optional float contrast_upper = 16;
+    // subtract off mean and divide by the variance
+    optional string normalization_type = 17;
+}

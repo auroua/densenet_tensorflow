@@ -1,0 +1,48 @@
+syntax = "proto2";
+
+package object_detection.protos;
+
+message DenseNet{
+    // the groth rate
+    optional int32 k_size = 1;
+    // the layers of the dense net
+    optional int32 L = 2;
+    // whether to add bias in convolution layers
+    optional bool bias_add = 3;
+    // the numbers of dense blocks in network
+    optional int32 dense_blocks = 4;
+    // the dense blocks depth. the number of convolutional group in dense block
+    repeated int32 block_size = 5;
+    // whether to use 1x1 conv layer
+    optional bool densenet_b = 6;
+    // whether to use dropout in bottleneck layer
+    optional bool dropout = 7;
+    // droput rate
+    optional float dropout_rate = 8;
+    // whether to use compression in transition layer
+    optional bool densenet_c = 9;
+    // the compression rate in transition layer
+    optional float theta = 10;
+    // whether to use batch normal and relu in transition layer
+    optional bool transition_layers_bn_relu = 11;
+    // regularizer rate
+    optional float weight_deacy = 12;
+    // head block kernel size
+    optional int32 head_kernel_size = 13;
+    // head block conv stride
+    optional int32 head_stride_size = 14;
+    // head max pool kernel size
+    optional int32 head_pool_kernel_size = 15;
+    // head max pool kernel stride size
+    optional int32 head_pool_stride_size = 16;
+    // classification layer
+    optional int32 output_num_class = 17;
+    // head block weights initializer options = ['variance_scaling_initializer', 'zeros_initializer', 'xavier_initializer_conv2d']
+    optional string head_block_weight_initializer = 18;
+    // dense block weights initiazlier options = ['variance_scaling_initializer', 'zeros_initializer', 'xavier_initializer_conv2d']
+    optional string dense_block_weights_initializer = 19;
+    // pool block weights initializer  optional = ['variance_scaling_initializer', 'xavier_initializer', 'zeros_initializer']
+    optional string pool_block_weights_initializer = 20;
+    // transition layer inter feature map rate
+    optional int32 intern_rate = 21;
+}
