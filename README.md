@@ -32,3 +32,7 @@ python densenet_cifar10_train_dataset_api.py
 | :------------: | :------------: | :------------: | :------------: |
 |  densenet(L=40, K=12) |     cifar10    |    0.91    |  no    |
 |  densenet(L=40, K=12) |     cifar10    |    0.92    |  yes |
+
+### Reference
+[DenseNet](https://github.com/liuzhuang13/DenseNet)
+[vision_networks](https://github.com/ikhlestov/vision_networks)
